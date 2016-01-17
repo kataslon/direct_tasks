@@ -1,0 +1,5 @@
+<dev>
+  <%= task.name %>
+  <%= link_to "Edit", edit_project_task_path(task.project_id, task.id) %>
+  <%= link_to "Delete", project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }  %></br>
+</dev>

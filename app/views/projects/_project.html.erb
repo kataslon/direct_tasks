@@ -1,3 +1,11 @@
 <div>
   <%= project.name %>
+  <%= link_to "Edit", edit_project_path(project) %>
+  <%= link_to "Delete", project_path(project), method: :delete, data: { confirm: "Are you sure?" }  %></br>
+  <%= form_for ([project, Task.new]) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
+  <%= render project.tasks %></br>
+  <%= link_to 'Delete', project, method: :delete, data: { confirm: "Are you sure?" } %></br>
 </div>
