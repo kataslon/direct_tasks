@@ -1,5 +1,8 @@
-<dev>
-  <%= task.name %>
-  <%= link_to "Edit", edit_project_task_path(task.project_id, task.id) %>
-  <%= link_to "Delete", project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }  %></br>
-</dev>
+<div class="select">
+  <div class="task">
+    <%= check_box_tag (task.status) %>
+    <%= task.name %>
+    <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id) %>
+    <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }  %>
+  </div>
+</div>

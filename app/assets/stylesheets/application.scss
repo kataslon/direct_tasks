@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1 {
+  text-align: center;
+}
+
+.box {
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+
+  .head {
+    background-color: #337AB7;
+    height: 35px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    i {
+      color: white;
+    }
+  }
+
+  .form {
+    background-color: #E8E5E5;
+    height: 35px;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+
+
+    input[type="text"], textarea {
+      margin: 5px;
+      width: 70%;
+    }
+    input[type="submit"] {
+    }
+  }
+}
+
+.task {
+  height: 35px;
+  border-top: 1px solid #999;
+}
+
+.select:hover {
+    background: rgba(238, 242, 58, 0.19);
+  }
+
+.task-list {
+  border: 1px solid #999;
+  border-radius: 0 0 15px 15px;
+}
+
+.btn {
+  width: 180px;
+  display: block;
+  margin: 0 auto 0 auto;
+}
