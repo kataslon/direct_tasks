@@ -1,8 +1,14 @@
-<div class="select">
-  <div class="task">
+<tr class="select">
+  <td class="check">
     <%= check_box_tag (task.status) %>
+  </td>
+  <td class="gap"></td>
+  <td class="text">
     <%= task.name %>
-    <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id) %>
+  </td>
+  <td class="nav">
+    <i class="glyphicon glyphicon-sort"></i> |
+    <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id) %> |
     <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }  %>
-  </div>
-</div>
+  </td>
+</tr>

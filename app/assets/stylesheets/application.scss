@@ -34,8 +34,18 @@ h1 {
     border-top: 1px solid #999;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
+
+    .glyphicon {
+      padding-left: 10px;
+      margin: 5px;
+    }
+
     i {
       color: white;
+      float: right;
+      margin: 5px;
+      padding-right: 5px;
+
     }
   }
 
@@ -46,6 +56,9 @@ h1 {
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 
+    i {
+      padding-left: 10px;
+    }
 
     input[type="text"], textarea {
       margin: 5px;
@@ -56,19 +69,43 @@ h1 {
   }
 }
 
+.task-list {
+  border: 1px solid #999;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+}
+
 .task {
-  height: 35px;
+  width: 100%;
+
+  td {
   border-top: 1px solid #999;
+  }
+
+  .check {
+    width: 6%;
+    border-right: 1px solid #999;
+  }
+
+  .gap {
+    width: 1%;
+  }
+
+  .text {
+    border-left: 1px solid #999;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .nav {
+    width: 17%;
+    border-left: 1px solid #999;
+  }
 }
 
 .select:hover {
     background: rgba(238, 242, 58, 0.19);
   }
-
-.task-list {
-  border: 1px solid #999;
-  border-radius: 0 0 15px 15px;
-}
 
 .btn {
   width: 180px;
