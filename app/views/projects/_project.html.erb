@@ -8,14 +8,14 @@
           <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_path(project) %>
       </div>
       <div class="form">
-        <%= form_for ([project, Task.new]) do |f| %>
+        <%= form_for ([project, Task.new]), remote: true do |f| %>
           <i class="glyphicon glyphicon-plus"></i>
           <%= f.text_field :name, placeholder: "Start typing here to create a task..." %>
           <%= f.submit %>
         <% end %>
       </div>
       <div class="task-list">
-        <table class="task">
+        <table class="task <%= task_project(project.id) %>">
           <%= render project.tasks %></br>
         </table>
       </div>

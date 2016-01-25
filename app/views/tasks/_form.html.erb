@@ -1,4 +1,7 @@
-<%= form_for ([@project, @task]) do |f| %>
+<td colspan="5">
+  <%= form_for ([@project, @task]), remote: true do |f| %>
     <%= f.text_field :name %>
     <%= f.submit %>
+    <%= link_to 'Back', project_task_path, remote: true %>
   <% end %>
+</td>

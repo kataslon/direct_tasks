@@ -1,0 +1,21 @@
+<td class="check">
+  <%= form_for ([task.project, task]), remote: true do |f| %>
+    <%= f.check_box :status %>
+    <%= f.submit "Update" %>
+  <% end %>
+</td>
+<td class="gap"></td>
+  <% if task.status %>
+    <td class="text">
+      <strike><%= task.name %></strike>
+    </td>
+  <% else %>
+    <td class="text">
+      <%= task.name %>
+    </td>
+  <% end %>
+<td class="nav">
+  <i class="glyphicon glyphicon-sort"></i> |
+  <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id), remote: :true %> |
+  <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true  %>
+</td>

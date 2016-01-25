@@ -89,13 +89,20 @@ h1 {
 
   .gap {
     width: 1%;
+    border-right: 1px solid #999;
   }
 
   .text {
-    border-left: 1px solid #999;
     text-align: left;
     padding: 10px;
   }
+
+  input[type="text"] {
+      height: 35px;
+      margin: 5px;
+      width: 100%;
+    }
+
 
   .nav {
     width: 17%;

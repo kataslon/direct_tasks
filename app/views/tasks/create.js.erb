@@ -1,0 +1,2 @@
+$('.<%= task_project(@project.id) %>').append('<%= j render "task", task: @task %>');
+$('.<%= edited_task(@task.id) %>').submitOnCheck();
