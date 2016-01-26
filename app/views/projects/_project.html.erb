@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container <%= active_project(project.id) %>">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 box" >
       <div class="head icon">
@@ -16,7 +16,7 @@
       </div>
       <div class="task-list">
         <table class="task <%= task_project(project.id) %>">
-          <%= render project.tasks %></br>
+          <%= render project.tasks.order("priority") %></br>
         </table>
       </div>
     </div>

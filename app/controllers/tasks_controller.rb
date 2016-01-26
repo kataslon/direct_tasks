@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
    def create
     @task = @project.tasks.create(task_params)
+    @task.set_priority(@project.id)
     respond_to do |format|
       format.html { redirect_to projects_path }
       format.js
@@ -26,7 +27,23 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
+    @task.reassing_priority
+    respond_to do |format|
+      format.html { redirect_to projects_path }
+      format.js
+    end
+  end
+
+  def up_priority
+    @task.up_prior(@project)
+    respond_to do |format|
+      format.html { redirect_to projects_path }
+      format.js
+    end
+  end
+
+  def down_priority
+    @task.down_prior(@project)
     respond_to do |format|
       format.html { redirect_to projects_path }
       format.js

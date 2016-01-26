@@ -7,4 +7,9 @@ module ApplicationHelper
   def task_project(id)
     "task_project_" + id.to_s
   end
+
+  def active_project(id)
+    "project_" + id.to_s
+  end
+
 end

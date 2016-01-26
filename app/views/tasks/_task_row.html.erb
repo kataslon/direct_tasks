@@ -14,8 +14,11 @@
       <%= task.name %>
     </td>
   <% end %>
+<td class="prior">
+    <%= link_to ('<i class="glyphicon glyphicon-triangle-top"></i>').html_safe, project_up_priority_path(task.project_id, task.id), remote: true %>
+    <%= link_to ('<i class="glyphicon glyphicon-triangle-bottom"></i>').html_safe, project_down_priority_path(task.project_id, task.id), remote: true %>
+</td>
 <td class="nav">
-  <i class="glyphicon glyphicon-sort"></i> |
-  <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id), remote: :true %> |
+ | <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id), remote: :true %> |
   <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true  %>
 </td>

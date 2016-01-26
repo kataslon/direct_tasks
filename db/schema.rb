@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110210220) do
+ActiveRecord::Schema.define(version: 20160125213226) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160110210220) do
     t.string  "name"
     t.boolean "status",     default: false
     t.integer "project_id"
+    t.integer "priority"
   end
 
   create_table "users", force: :cascade do |t|
