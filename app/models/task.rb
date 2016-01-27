@@ -9,12 +9,9 @@ class Task < ActiveRecord::Base
   def reassing_priority
     project = Project.find(self.project_id)
     incr = 1
-    self.destroy
     project.tasks.order('priority').each do |task|
-      task.priority = incr
-      task.save
+      task.update(priority: incr)
       incr += 1
-      # task.update_attribute(priority: (incr += 1))
     end
   end
 

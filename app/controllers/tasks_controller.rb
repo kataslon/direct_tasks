@@ -27,7 +27,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.reassing_priority
+    task = @task
+    @task.destroy
+    task.reassing_priority
     respond_to do |format|
       format.html { redirect_to projects_path }
       format.js
