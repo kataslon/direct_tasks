@@ -1,5 +1,5 @@
 <td class="check">
-  <%= form_for ([task.project, task]), remote: true do |f| %>
+  <%= form_for ([task.project, task], remote: true) do |f| %>
     <%= f.check_box :status %>
     <%= f.submit "Update" %>
   <% end %>
