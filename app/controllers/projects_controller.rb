@@ -1,8 +1,17 @@
 class ProjectsController < ApplicationController
   before_action :set_project, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index]
 
   def index
-    @projects = Project.all
+    if current_user
+      @projects = current_user.projects.order(id: :desc)
+    else
+      @projects = []
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -10,12 +19,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    # @project = current_user.projects.build(project_params)
     @project = Project.create(project_params)
+    byebug
+    @project.user_id = current_user.id
+    @project.save
     redirect_to projects_path
   end
 
   def destroy
-    # подумать нужно ли создавать set_project и вызывать его в колбеке
     @project.destroy
     redirect_to projects_path
   end
