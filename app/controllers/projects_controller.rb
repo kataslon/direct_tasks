@@ -21,7 +21,6 @@ class ProjectsController < ApplicationController
   def create
     # @project = current_user.projects.build(project_params)
     @project = Project.create(project_params)
-    byebug
     @project.user_id = current_user.id
     @project.save
     redirect_to projects_path
