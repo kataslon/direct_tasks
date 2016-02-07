@@ -1,0 +1,2 @@
+$('.<%= edited_task(@task.id) %>').html('<%= j render 'task_row', task: @task %>');
+$('.<%= edited_task(@task.id) %>').submitOnCheck();

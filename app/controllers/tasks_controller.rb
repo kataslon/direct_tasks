@@ -2,7 +2,14 @@ class TasksController < ApplicationController
   before_action :set_project
   before_action :set_task, except: [:create]
 
-   def create
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def create
     @task = @project.tasks.create(task_params)
     @task.set_priority(@project.id)
     respond_to do |format|
