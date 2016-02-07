@@ -1,7 +1,11 @@
 <td colspan="5">
-  <%= form_for [@project, @task], remote: true do |f| %>
+  <%= simple_form_for [@project, @task], remote: true do |f| %>
     <%= f.text_field :name %>
+    <%= f.input :dead_line, as: :datetime_picker %>
     <%= f.submit %>
     <%= link_to 'Back', project_task_path, remote: true %>
   <% end %>
 </td>
+<script type="text/javascript">
+    $('.datetimepicker').datetimepicker();
+</script>
