@@ -12,4 +12,7 @@ module ApplicationHelper
     "project_#{id}"
   end
 
+  def date_time(datetime)
+  	datetime.blank? ? nil :	datetime.strftime("%d/%b")
+  end
 end
