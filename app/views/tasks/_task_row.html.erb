@@ -13,12 +13,17 @@
     <% if task.overdue? %>
       <td class="text overdue">
         <%= task.name %></br>
-        <div align="right"><%= date_time(task.dead_line) %><div>
+        <div align="right" class="<%= edited_task(task.id) %>">
+          <%= link_to ('<i class="glyphicon glyphicon-time"></i>').html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
+          <%= date_time(task.dead_line) %><div>
       </td>
     <% else %>
       <td class="text">
         <%= task.name %></br>
-        <div align="right"><%= date_time(task.dead_line) %><div>
+        <div align="right" class="<%= edited_task(task.id) %>">
+          <%= link_to ('<i class="glyphicon glyphicon-time"></i>').html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
+          <%= date_time(task.dead_line) %>
+        <div>
       </td>
     <% end %>
   <% end %>
