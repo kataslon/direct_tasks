@@ -1,16 +1,7 @@
 <td colspan="5">
   <%= form_for [@project, @task], remote: true do |f| %>
     <%= f.text_field :name %>
-    <%= f.datetime_field :dead_line, id: "datetimepicker", value: "#{@task.dead_line}" %>
     <%= f.submit %>
     <%= link_to 'Back', project_task_path, remote: true %>
   <% end %>
 </td>
-<script type="text/javascript">
-  $(function () {
-    $('#datetimepicker').datetimepicker({
-      locale: 'ru',
-      format: 'DD/MM/YYYY'
-    });
-  });
-</script>
