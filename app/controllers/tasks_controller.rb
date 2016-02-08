@@ -25,6 +25,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def dead_line_edit
+    respond_to do |format|
+      format.html { redirect_to project_task_path }
+      format.js
+    end
+  end
+
   def update
     @task.update(task_params)
     respond_to do |format|
@@ -70,7 +77,7 @@ class TasksController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:name, :status)
+      params.require(:task).permit(:name, :status, :dead_line)
     end
 
 end

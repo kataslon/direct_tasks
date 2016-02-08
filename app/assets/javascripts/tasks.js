@@ -6,6 +6,14 @@ jQuery.fn.submitOnCheck = function() {
   return this;
 }
 
+jQuery.fn.selectionDeadLine = function() {
+  this.find('#datetimepicker').datetimepicker({
+    locale: 'ru',
+    format: 'DD/MM/YYYY'
+  });
+  return this;
+}
+
 $(function() {
   $('.edit_task').submitOnCheck();
 });

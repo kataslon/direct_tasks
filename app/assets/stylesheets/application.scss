@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
 h1 {
   text-align: center;
@@ -95,6 +96,10 @@ h1 {
   .text {
     text-align: left;
     padding: 10px;
+  }
+
+  .overdue {
+    background-color: #F98D75;
   }
 
   input[type="text"] {

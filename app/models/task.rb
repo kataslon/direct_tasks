@@ -34,4 +34,12 @@ class Task < ActiveRecord::Base
     end
   end
 
+  def overdue?
+    unless self.dead_line.blank? 
+      self.dead_line < Time.now ? true : false
+    else
+      false
+    end
+  end
+
 end
