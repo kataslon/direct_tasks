@@ -2,6 +2,13 @@ class ProjectsController < ApplicationController
   before_action :set_project, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:index]
 
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def index
     if current_user
       @projects = current_user.projects.order(id: :desc)
@@ -16,6 +23,10 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -28,15 +39,31 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_path
+    if current_user
+      @projects = current_user.projects.order(id: :desc)
+    else
+      @projects = []
+    end
+    # redirect_to projects_path
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
     @project.update(project_params)
-    redirect_to projects_path
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private

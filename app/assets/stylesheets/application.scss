@@ -17,13 +17,33 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
+body {
+  background-image: url('http://ipic.su/img/img7/fs/background.1455029097.png');
+  background-attachment: fixed;
+}
+
 h1 {
   text-align: center;
 }
 
+.new-project {
+
+  table {
+      width: 100%;
+    }
+
+    .projet-icon {
+      width: 8%;
+    }
+
+    .project-name {
+      width: 110px;
+    }
+}
+
 .box {
-  margin-top: 45px;
-  margin-bottom: 45px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
 
   .head {
@@ -36,36 +56,91 @@ h1 {
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 
+    table {
+      width: 100%;
+    }
+
+    .projet-icon {
+      width: 8%;
+    }
+
+    .project-name {
+      width: 76%;
+    }
+
+    #new-project-name {
+     width: 95%;
+    }
+
+    .project-nav {
+      width: 16%;
+    }
+
+    .calendar-icon {
+      color: black;
+    }
+
+
     .glyphicon {
       padding-left: 10px;
       margin: 5px;
+      font-size: 17px;
+      padding-top: 3px;
     }
 
     i {
-      color: white;
+      color: #337AB7;
       float: right;
       margin: 5px;
       padding-right: 5px;
-
     }
+
+    .edit-project {
+
+      input[type="text"], textarea {
+        width: 78%;
+        color: black;
+      }
+
+      .button-submit {
+        cursor: pointer;
+      }
+    }
+
   }
+
+  .on-top:hover {
+    i {
+        color: white;
+      }
+  }
+
 
   .form {
     background-color: #E8E5E5;
-    height: 35px;
+    height: 41px;
     border-top: 1px solid #999;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 
-    i {
+    .glyphicon-plus {
+      padding-top: 5px;
       padding-left: 10px;
+      color: #5a9074;
+      font-size: 21px;
     }
 
     input[type="text"], textarea {
-      margin: 5px;
-      width: 70%;
+      width: 77%;
+      height: 30px;
     }
-    input[type="submit"] {
+
+    .add-task-button {
+      background-color: #5a9074;
+      height: 30px;
+      width: 15%;
+      color: white;
+      border-radius: 0 10px 10px 0;
     }
   }
 }
@@ -74,57 +149,92 @@ h1 {
   border: 1px solid #999;
   border-radius: 0 0 15px 15px;
   text-align: center;
-}
+  background: white;
 
-.task {
-  width: 100%;
 
-  td {
-  border-top: 1px solid #999;
-  }
-
-  .check {
-    width: 6%;
-    border-right: 1px solid #999;
-  }
-
-  .gap {
-    width: 1%;
-    border-right: 1px solid #999;
-  }
-
-  .text {
-    text-align: left;
-    padding: 10px;
-  }
-
-  .overdue {
-    background-color: #F98D75;
-  }
-
-  input[type="text"] {
-    height: 35px;
-    margin: 5px;
+  .task {
     width: 100%;
-  }
 
-  .prior {
-    border-left: 1px solid #999;
-    width: 5%;
-    padding-left: 10px;
-  }
+    .task-nav {
+      width: 12%;
+    }
 
-  .nav {
-    width: 12%;
+    .nav-icon, .glyphicon, .glyphicon-time {
+      color: white;
+    }
+
+    .dead_line .glyphicon-time {
+      color: #9D9D9B;
+    }
+
+    .dead_line_red .glyphicon-time {
+      color: red;
+    }
+
+    .dead_line, .dead_line_red {
+      font-size: 15px;
+    }
+
+    .select:hover {
+      background: #FCFED5;
+
+      .nav-icon, .glyphicon {
+        color: #9D9D9B;
+      }
+
+      .button-submit {
+        cursor: pointer;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+
+    td {
+    border-top: 1px solid #999;
+    }
+
+    .task-check {
+      width: 6%;
+      border-right: 1px solid #999;
+    }
+
+    .task-gap {
+      width: 1%;
+      border-right: 1px solid #999;
+    }
+
+    .task-text {
+      font-size: 17px;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .overdue {
+      background-color: #FFD1C7;
+    }
+
+    input[type="text"] {
+      height: 35px;
+      margin: 5px;
+      width: 85%;
+    }
+
+    .priority {
+      border-left: 1px solid #999;
+      width: 5%;
+      padding-left: 10px;
+    }
   }
 }
 
-.select:hover {
-    background: rgba(238, 242, 58, 0.19);
+  .btn {
+    width: 180px;
+    display: block;
+    margin: 0 auto 0 auto;
   }
 
-.btn {
-  width: 180px;
-  display: block;
-  margin: 0 auto 0 auto;
-}
+  footer {
+    padding: 25px;
+    color: #ffffff;
+    text-align: center;
+  }

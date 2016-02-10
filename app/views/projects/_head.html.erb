@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td class="project-icon">
+      <div class="calendar-icon glyphicon glyphicon-calendar"></div>
+    </td>
+    <td class="project-name">
+      <%= project.name %>
+    </td>
+    <td class="project-nav">
+      <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project, method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+      <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_path(project), remote: true  %>
+    </td>
+  </tr>
+</table>

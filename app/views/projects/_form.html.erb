@@ -1,11 +1,7 @@
-<%= form_for @project do |f| %>
-  <div>
-    <%= f.label :name %>
-    <div>
-      <%= f.text_field :name %>
-    </div>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="edit-project">
+  <%= form_for @project, remote: true do |f| %>
+    <%= f.text_field :name %>
+    <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, new_or_extst_project(@project), remote: true %>
+    <i class="button-submit glyphicon glyphicon-ok"></i>
+  <% end %>
+</div>

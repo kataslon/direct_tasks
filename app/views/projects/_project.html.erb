@@ -1,17 +1,14 @@
 <div class="container <%= active_project(project.id) %>">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 box" >
-      <div class="head icon">
-        <div class="glyphicon glyphicon-calendar"></div>
-        <%= project.name %>
-          <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project, method: :delete, data: { confirm: "Are you sure?" }  %>
-          <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_path(project) %>
+      <div class="on-top head">
+        <%= render "projects/head", project: project %>
       </div>
       <div class="form">
         <%= form_for [project, Task.new], remote: true do |f| %>
           <i class="glyphicon glyphicon-plus"></i>
           <%= f.text_field :name, placeholder: "Start typing here to create a task..." %>
-          <%= f.submit %>
+          <%= f.submit 'Add Task', class: 'add-task-button' %>
         <% end %>
       </div>
       <div class="task-list">
