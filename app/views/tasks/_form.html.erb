@@ -1,7 +1,7 @@
 <td colspan="5">
   <%= form_for [@project, @task], remote: true do |f| %>
     <%= f.text_field :name %>
-    <%= f.submit %>
-    <%= link_to 'Back', project_task_path, remote: true %>
+    <i class="button-submit glyphicon glyphicon-ok"></i>
+    <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, project_task_path, remote: true %>
   <% end %>
 </td>

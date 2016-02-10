@@ -1,6 +1,7 @@
 <td colspan="5">
   <%= form_for [@project, @task], remote: true do |f| %>
     <%= f.datetime_field :dead_line, id: "datetimepicker", value: "#{@task.dead_line}" %>
-    <%= f.submit %>
+    <i class="button-submit glyphicon glyphicon-ok"></i>
+    <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, project_task_path, remote: true %>
   <% end %>
 </td>

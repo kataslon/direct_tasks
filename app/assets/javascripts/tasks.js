@@ -14,6 +14,13 @@ jQuery.fn.selectionDeadLine = function() {
   return this;
 }
 
+jQuery.fn.buttonSubmit = function() {
+  this.find('.button-submit').click(function() {
+    $(this).parent('form').submit();
+  });
+  return this;
+}
+
 $(function() {
   $('.edit_task').submitOnCheck();
 });
