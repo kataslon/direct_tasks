@@ -14,24 +14,24 @@
       <td class="task-text overdue">
         <%= task.name %></br>
         <div align="right" class="<%= edited_task(task.id) %> <%= dead_line(task.id) %>">
-          <%= link_to ('<i class="glyphicon glyphicon-time"></i>').html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
+          <%= link_to '<i class="glyphicon glyphicon-time"></i>'.html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
           <%= date_time(task.dead_line) %><div>
       </td>
     <% else %>
       <td class="task-text">
         <%= task.name %></br>
         <div align="right" class="<%= edited_task(task.id) %> <%= dead_line(task.id) %>">
-          <%= link_to ('<i class="glyphicon glyphicon-time"></i>').html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
+          <%= link_to '<i class="glyphicon glyphicon-time"></i>'.html_safe, project_dead_line_edit_path(task.project_id, task.id), remote: true %>
           <%= date_time(task.dead_line) %>
         <div>
       </td>
     <% end %>
   <% end %>
 <td class="priority">
-    <%= link_to ('<i class="glyphicon glyphicon-triangle-top"></i>').html_safe, project_up_priority_path(task.project_id, task.id), remote: true %>
-    <%= link_to ('<i class="glyphicon glyphicon-triangle-bottom"></i>').html_safe, project_down_priority_path(task.project_id, task.id), remote: true %>
+    <%= link_to '<i class="glyphicon glyphicon-triangle-top"></i>'.html_safe, project_up_priority_path(task.project_id, task.id), remote: true %>
+    <%= link_to '<i class="glyphicon glyphicon-triangle-bottom"></i>'.html_safe, project_down_priority_path(task.project_id, task.id), remote: true %>
 </td>
 <td class="task-nav">
- <scope class="nav-icon">| <%= link_to ('<i class="glyphicon glyphicon-pencil"></i>').html_safe, edit_project_task_path(task.project_id, task.id), remote: :true %> |
-  <%= link_to ('<i class="glyphicon glyphicon-trash"></i>').html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true  %></scope>
+ <scope class="nav-icon">| <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_project_task_path(task.project_id, task.id), remote: :true %> |
+  <%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, project_task_path(task.project_id, task.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true  %></scope>
 </td>
